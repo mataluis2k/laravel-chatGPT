@@ -20,16 +20,13 @@ class GPT4Service
                          ],
              ]);
     }
-    // {
-    //     "model": "gpt-3.5-turbo",
-    //     "messages": [{"role": "user", "content": "Hello!"}]
-    //   }
+  
       
     public function generateText(string $prompt, int $maxTokens = 50)
     {
         $response = $this->client->post('chat/completions', [
             'json' => [
-                'model' => "gpt-3.5-turbo",
+                'model' => "gpt-3.5-turbo", // Here you can select from the following models : gpt-4, gpt-4-0314, gpt-4-32k, gpt-4-32k-0314, gpt-3.5-turbo, gpt-3.5-turbo-0301 
                 'messages' => [ 
                     [
                         'role' => 'user',
